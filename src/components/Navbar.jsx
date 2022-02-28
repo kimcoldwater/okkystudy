@@ -20,7 +20,7 @@ const Navbar = () => {
             sx={{ mr: 2, cursor: 'pointer' }}
             onClick={() => navigate('/')}
           >
-            LOGO
+            Home
           </Typography>
           <Box>
             <Button
