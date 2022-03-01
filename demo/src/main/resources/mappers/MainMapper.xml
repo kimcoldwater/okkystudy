@@ -4,7 +4,7 @@
 
 <insert id="boardInsert">
 insert into test(NO,TITLE,CONTENT,WRITER,REGDATE) 
-VALUES ( (SELECT NVL(MAX(NO), 0) + 1 FROM test) , #{title}, #{content}, #{writer}, #{regdate} )
+VALUES ( (SELECT NVL(MAX(NO), 0) + 1 FROM test) , #{title}, #{content}, #{writer}, sysdate )
 </insert>
 
 <select id="boardSelect" resultType="com.example.demo.MainVO">
