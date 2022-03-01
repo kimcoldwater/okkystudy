@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.MainMapper">
+
+<insert id="boardInsert">
+insert into test(NO,TITLE,CONTENT,WRITER,REGDATE) 
+VALUES ( (SELECT NVL(MAX(NO), 0) + 1 FROM test) , #{title}, #{content}, #{writer}, #{regdate} )
+</insert>
+
+<select id="boardSelect" resultType="com.example.demo.MainVO">
+select * from test
+</select>
+
+<delete id="boardDelete">
+delete from test where title = #{title}
+</delete>
+</mapper>
